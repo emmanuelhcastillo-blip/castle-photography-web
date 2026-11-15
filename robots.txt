@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://emmanuelhcastillo-blip.github.io/castle-photography/sitemap.xml
+Sitemap: https://emmanuelhcastillo-blip.github.io/castle-photography-web/sitemap.xml
