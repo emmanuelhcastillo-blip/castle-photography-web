@@ -16,6 +16,7 @@
   const data=new FormData(form);
   const request={
    nome:str(data.get("nome"),90),
+   contato:str(data.get("contato"),160),
    servico:str(data.get("servico"),100),
    empresa:str(data.get("empresa"),100),
    prazo:str(data.get("prazo"),100),
@@ -52,6 +53,7 @@
   "Olá, Emmanuel! Encontrei a CASTLE e quero falar sobre um projeto.",
   "",
   "Nome: "+request.nome,
+  "Contato: "+request.contato,
   "Serviço: "+request.servico,
   "Marca/perfil: "+request.empresa,
   "Prazo: "+request.prazo,
