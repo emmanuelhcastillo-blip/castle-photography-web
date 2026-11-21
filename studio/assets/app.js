@@ -2,8 +2,17 @@
  const root=document.documentElement;
  const mob=document.getElementById('mobileToggle');
  const nav=document.getElementById('navigation');
- mob?.addEventListener('click',()=>{const open=nav.classList.toggle('open');mob.setAttribute('aria-expanded',String(open));mob.textContent=open?'Fechar ×':'Menu ☰'});
- nav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');mob?.setAttribute('aria-expanded','false')}));
+ const setMenuOpen=(open,restoreFocus=false)=>{
+  if(!mob||!nav)return;
+  nav.classList.toggle('open',open);mob.setAttribute('aria-expanded',String(open));
+  mob.textContent=open?'Fechar ×':'Menu ☰';
+  if(restoreFocus)mob.focus();
+ };
+ mob?.addEventListener('click',()=>setMenuOpen(mob.getAttribute('aria-expanded')!=='true'));
+ nav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenuOpen(false)));
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&mob?.getAttribute('aria-expanded')==='true')setMenuOpen(false,true)});
+ document.addEventListener('pointerdown',e=>{if(mob?.getAttribute('aria-expanded')==='true'&&!e.target.closest('#navigation,#mobileToggle'))setMenuOpen(false)});
+ window.addEventListener('resize',()=>{if(window.innerWidth>900&&mob?.getAttribute('aria-expanded')==='true')setMenuOpen(false)});
  document.querySelectorAll('#year').forEach(x=>x.textContent=String(new Date().getFullYear()));
  const prefersReduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
  const items=[...document.querySelectorAll('.reveal')];
