@@ -76,3 +76,15 @@ body .btn{min-height:48px;border-radius:3px}body .floating{width:50px;height:50p
 
 /* Keep mobile commercial copy readable on first paint while other sections reveal on scroll. */
 @media(max-width:760px){.immersive-site .ph-hero .reveal{opacity:1;transform:none;transition:none}}
+/* V7 mobile polish: a genuine video card deserves a full-width stage, not a squeezed two-column poster. */
+@media(max-width:540px){
+ .v7-reel-card{display:block;min-height:0}
+ .v7-reel-art{height:220px;min-height:0;padding:18px}
+ .v7-reel-caption{font-size:clamp(27px,8vw,39px);max-width:17ch}
+ .v7-reel-body{padding:18px 21px 22px}
+ .v7-reel-body h3{font-size:25px}
+ .v7-reel-body p{font-size:14px;line-height:1.6}
+ .v7-reel-actions{gap:12px}
+ .v7-reel-play{left:79%;top:36%}
+}
+@media(max-width:540px){.v7-reel-play{left:auto;right:17px;top:17px;transform:none;width:41px;height:41px;font-size:15px;box-shadow:0 0 0 7px #edbf6520}}
