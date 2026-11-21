@@ -127,3 +127,9 @@
 @media(prefers-reduced-motion:reduce){.phone-device{animation:none!important;transform:rotateY(-12deg)!important}.premium-detail .detail-marquee>div{animation:none}.photo-grid img,.portrait-gallery img{transition:none!important}.js-ready .reveal,.js-ready .reveal.in{opacity:1!important;transform:none!important}}
 /* Reduced-motion and manual pause applied to all animations */
 .pause-motion .phone-device,.pause-motion .reel-scene,.pause-motion .badge-float{animation-play-state:paused!important}
+
+/* Progressive enhancement: static content remains visible if scripts fail. */
+.reveal{opacity:1;transform:none}
+.js-ready .reveal:not(.in){opacity:0;transform:translate3d(0,24px,0)}
+.js-ready .reveal.in{opacity:1;transform:translate3d(0,0,0)}
+@media(prefers-reduced-motion:reduce){.phone-device,.reel-scene,.badge-float,.phone-stage .orbit{animation:none!important}.reel-scene.scene-a{opacity:1!important}.reel-scene.scene-b,.reel-scene.scene-c{opacity:0!important}}
