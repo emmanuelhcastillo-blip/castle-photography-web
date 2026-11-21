@@ -16,8 +16,8 @@
   <meta property="og:locale" content="pt_BR">
   <link rel="stylesheet" href="assets/style.css"><link rel="stylesheet" href="assets/premium.css?v=20261121-2">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"CASTLE Creative Studio","description":"Fotografia de retratos, produtos, publicidade, Reels e design web","url":"https://emmanuelhcastillo-blip.github.io/castle-photography-web/","telephone":"+55 95 99147-6397","areaServed":{"@type":"City","name":"Boa Vista","address":{"@type":"PostalAddress","addressRegion":"RR","addressCountry":"BR"}},"availableLanguage":["pt-BR","es","en"],"founder":{"@type":"Person","name":"Emmanuel H. Castillo"}}</script>
-</head>
-<body>
+<link rel="stylesheet" href="assets/immersive-v5.css?v=5-20261121"></head>
+<body class="immersive-site">
 <header class="nav">
   <div class="wrap navin">
     <a class="logo" href="index.html" aria-label="Castle Creative Studio início">CASTLE<i>.</i><small>Creative studio</small></a>
@@ -43,81 +43,33 @@
       <div class="ph-grid">
         <div class="ph-copy reveal">
           <span class="eyebrow">Imagem, linguagem e presença para pessoas e marcas.</span>
-          <h1 class="ph-title grow-on-view">Sua imagem pode vender, <em>seduzir</em> e ser lembrada.</h1>
-          <p class="ph-text">A CASTLE junta fotografia, conteúdo, direção de arte e páginas web para que a sua presença não pareça improvisada. Retratos editoriais, campanhas visuais, Reels com roteiro e landing pages com intenção.</p>
+          <h1 class="ph-title grow-on-view">Seu conteúdo não nasceu para <em>passar despercebido.</em></h1>
+          <p class="ph-text">Fotografia com linguagem de cinema. Reels com narrativa e edição de verdade. Campanhas, produtos e páginas digitais com personalidade. Uma criação por inteiro, do conceito à entrega.</p>
           <div class="ph-cta-row">
             <a class="btn gold" href="#contato">Começar um projeto ↗</a>
-            <a class="btn ghost" href="#motion">Ver a experiência ↓</a>
+            <a class="btn ghost" href="#motion">Ver a edição em ação ↓</a>
           </div>
           <div class="metric-strip reveal">
             <div><strong>20k+</strong><span>seguidores em conteúdo orgânico</span></div>
-            <div><strong>ES / EN</strong><span>fluente · PT em evolução</span></div>
+            <div><strong>ES / EN</strong><span>voz e roteiro · PT em evolução</span></div>
             <div><strong>Cuba → Brasil</strong><span>novo olhar em Boa Vista</span></div>
           </div>
         </div>
 
-        <div class="phone-stage reveal" data-parallax="0.05">
-          <div class="stage-glow glow-a"></div>
-          <div class="stage-glow glow-b"></div>
-          <div class="orbit orbit-a"></div>
-          <div class="orbit orbit-b"></div>
-          <div class="hero-card hero-stat one glass-card reveal">
-            <span>UGC / TALKING HEAD</span>
-            <strong>Ritmo + retenção</strong>
-            <p>Hooks, cortes, guion y personalidad.</p>
-          </div>
-          <div class="hero-card hero-stat two glass-card reveal">
-            <span>LANDING PAGES</span>
-            <strong>Visual que converte</strong>
-            <p>Captação de leads, copy e direção.</p>
-          </div>
-          <div class="hero-card hero-stat three glass-card reveal">
-            <span>RETRATOS</span>
-            <strong>Cinematográficos</strong>
-            <p>Rosto, atitude e narrativa.</p>
-          </div>
-          <div class="phone-shell">
-            <div class="phone-shadow"></div>
-            <div class="phone-device">
-              <div class="phone-back" aria-hidden="true"><div class="phone-cameras"><span></span><span></span><span></span></div><div class="phone-back-mark">CASTLE<span>CREATIVE</span></div><div class="phone-back-glint"></div></div><div class="phone-notch"></div>
-              <div class="phone-screen">
-                <div class="reel-scene scene-a">
-                  <div class="scene-copy">
-                    <span class="scene-tag">REEL / HOOK</span>
-                    <h3>Parou. <br>Agora <em>escuta.</em></h3>
-                    <p>Motion + legenda + CTA.</p>
-                  </div>
-                  <div class="scene-bars"><span></span><span></span><span></span><span></span></div>
-                </div>
-                <div class="reel-scene scene-b">
-                  <div class="mini-timeline"><i></i><i></i><i></i><i></i></div>
-                  <div class="scene-photo-frame">
-                    <img src="https://emmanuelhcastillo-blip.github.io/castle-photography-web/foto-oculos.jpg" alt="Retrato editorial em tela de telefone" loading="lazy" decoding="async">
-                  </div>
-                  <div class="scene-copy alt">
-                    <span class="scene-tag">UGC / ROTEIRO</span>
-                    <h3>Você fala.<br>O vídeo segura.</h3>
-                    <p>Natural, direto e com intenção.</p>
-                  </div>
-                </div>
-                <div class="reel-scene scene-c">
-                  <div class="screen-site">
-                    <div class="screen-browser-bar"><span></span><span></span><span></span></div>
-                    <div class="screen-site-copy">
-                      <small>LANDING / CAPTAÇÃO</small>
-                      <h4>Seu melhor vendedor digital.</h4>
-                      <div class="screen-metrics"><b>Lead</b><b>Oferta</b><b>Prova</b></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="screen-ui">
-                  <span class="badge-float badge-1">Hook</span>
-                  <span class="badge-float badge-2">Story</span>
-                  <span class="badge-float badge-3">CTA</span>
-                </div>
-              </div>
+        <div class="immersive-stage reveal" id="immersive-phone" aria-label="Modelo interativo 3D de smartphone exibindo demonstrações de edição de vídeo">
+          <div class="stage-ambient"></div>
+          <div class="immersive-arc arc-one" aria-hidden="true"></div><div class="immersive-arc arc-two" aria-hidden="true"></div>
+          <canvas id="castle-phone-canvas" aria-label="Smartphone tridimensional giratório com prévias animadas de Reels, UGC e anúncios" role="img"></canvas>
+          <div class="immersive-fallback" id="phoneFallback" aria-hidden="true">
+            <div class="fallback-phone">
+              <div class="fallback-screen"><span class="fallback-kicker">CASTLE / MOTION LAB</span><strong>REELS COM <em>INTENÇÃO.</em></strong><span class="fallback-play">▶</span><span class="fallback-timeline"></span><span class="fallback-captions">Cortes · Texto · Ritmo · Direção</span></div>
             </div>
           </div>
+          <div class="immersive-panel panel-hook" aria-hidden="true"><span class="panel-bullet">●</span><small>01 / STORYTELLING</small><b>O primeiro segundo importa.</b></div>
+          <div class="immersive-panel panel-edit" aria-hidden="true"><span class="live-wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><small>02 / EDIÇÃO</small><b>Ritmo que sustenta.</b></div>
+          <div class="immersive-panel panel-creative" aria-hidden="true"><span class="mini-play">▶</span><small>03 / ANÚNCIO</small><b>Da ideia ao criativo.</b></div>
+          <div class="phone-controls"><button type="button" class="phone-control" id="rotatePhone" aria-label="Pausar ou retomar rotação 3D"><span id="rotateIcon">Ⅱ</span> <span id="rotateLabel">Pausar giro</span></button><button type="button" class="phone-control phone-next" id="nextPhoneScene">Próxima cena ↗</button></div>
+          <p class="phone-helper"><span class="helper-dot"></span> MODELO 3D INTERATIVO <span>·</span> ARRASTE PARA GIRAR</p>
         </div>
       </div>
     </div>
@@ -136,25 +88,25 @@
       </div>
       <div class="premium-grid">
         <a class="premium-service reveal" href="retratos.html">
-          <span class="service-index">01</span>
+          <span class="service-index">01 / ENQUADRAMENTO</span><span class="service-emoji" aria-hidden="true">◉</span>
           <h3>Retratos & editoriais</h3>
           <p>Imagem pessoal, ensaios externos, branding visual e retratos com atmosfera cinematográfica.</p>
           <span class="service-chip">Personal branding ↗</span>
         </a>
         <a class="premium-service reveal" href="marcas.html">
-          <span class="service-index">02</span>
+          <span class="service-index">02 / PRODUTO</span><span class="service-emoji" aria-hidden="true">✳</span>
           <h3>Produtos & gastronomia</h3>
           <p>Fotografia comercial de produtos, comida, catálogos, cardápios e peças para anúncios.</p>
           <span class="service-chip">Comercial ↗</span>
         </a>
         <a class="premium-service reveal" href="#motion">
-          <span class="service-index">03</span>
+          <span class="service-index">03 / MOVIMENTO</span><span class="service-emoji" aria-hidden="true">▣</span>
           <h3>Reels, UGC & roteiro</h3>
           <p>Conteúdo curto, talking head, ideias com gancho, edição vertical e ritmo de retenção.</p>
           <span class="service-chip">Conteúdo ↗</span>
         </a>
         <a class="premium-service reveal" href="websites.html">
-          <span class="service-index">04</span>
+          <span class="service-index">04 / PRESENÇA</span><span class="service-emoji" aria-hidden="true">↗</span>
           <h3>Sites & landing pages</h3>
           <p>Páginas leves, responsivas, com estrutura de oferta, prova e captação de contatos.</p>
           <span class="service-chip">Web ↗</span>
@@ -171,6 +123,23 @@
           <p>Quando a sua marca precisa de fotografia, copy, página, vídeos e um sistema visual coerente.</p>
           <span class="service-chip">Sob medida ↗</span>
         </a>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="showcase-ribbon" aria-label="Serviços criativos em destaque">
+    <div class="ribbon-photo reveal"><img src="https://emmanuelhcastillo-blip.github.io/castle-photography-web/foto-fumaca.jpg" alt="Retrato artístico autoral CASTLE com fumaça" loading="lazy" decoding="async"><div class="ribbon-copy"><span>IMAGEM / 001</span><h2>LUZ. <em>ATITUDE.</em><br>HISTÓRIA.</h2><a href="retratos.html">Descubra os retratos <b>↗</b></a></div></div>
+    <div class="ribbon-digital reveal"><div class="ribbon-noise" aria-hidden="true"></div><div class="digital-art"><span class="d-art-orb"></span><span class="d-art-orb two"></span><div class="d-art-sticker">criativo<br>em movimento ✳</div><div class="d-art-cursor">✦</div></div><div class="ribbon-copy"><span>MOTION / 002</span><h2>NÃO É<br>MAIS UM <em>REEL.</em></h2><a href="#motion">Veja o motion lab <b>↗</b></a></div></div>
+  </section>
+
+  <section class="editlab-section" id="editlab" aria-label="Demonstração de edição de vídeo">
+    <div class="wrap editlab-wrap">
+      <div class="editlab-heading reveal"><span class="eyebrow">CASTLE / EDIT LAB • DEMONSTRAÇÃO ORIGINAL</span><h2>O vídeo ganha<br><em>outra vida</em> na edição.</h2><p>Em vez de prometer resultados imaginários, mostramos o processo: gancho, enquadramento, cortes, legendas e a chamada final. Uma prévia conceitual, animada de verdade.</p></div>
+      <div class="timeline-studio reveal" id="editlabLive">
+        <div class="studio-toolbar"><span class="studio-traffic"><i></i><i></i><i></i></span><strong>CASTLE / motion editor</strong><span class="studio-export">CONCEITO / DEMO ●</span></div>
+        <div class="studio-core"><div class="studio-sidebar"><span>PROJECT 01</span><b>Reel com roteiro</b><div class="sidebar-tool selected">▣ <span>Timeline</span></div><div class="sidebar-tool">▤ <span>Legendas</span></div><div class="sidebar-tool">◌ <span>Motion</span></div><div class="sidebar-tool">♫ <span>Áudio</span></div></div><div class="studio-monitor"><div class="studio-reel" id="studioReel"><div class="reel-camera"><div class="reel-lights"></div><span class="reel-eye">CASTLE FRAME / 9:16</span><div class="reel-topic">O SEU VÍDEO<br><em>MERECE UM</em><br><strong>GANCHO.</strong></div><span class="reel-counter">00:00 / 00:15</span></div><div class="reel-monitor-ui"><span class="rec-dot">●</span> EM PRODUÇÃO</div></div><div class="studio-info"><span>01 / 03</span><b id="studioShotTitle">O gancho</b><p id="studioShotDesc">Os primeiros segundos devem ganhar atenção, não pedi-la.</p><button type="button" id="studioNext" class="studio-next">PRÓXIMO PLANO ↗</button></div></div></div>
+        <div class="studio-timeline" aria-label="Linha do tempo animada com camadas de vídeo, texto e áudio"><div class="timeline-ruler">00:00 <span>00:05</span><span>00:10</span><span>00:15</span></div><div class="video-track"><span class="track-label">V1</span><div class="video-clip clip-1">HOOK</div><div class="video-clip clip-2">HISTÓRIA</div><div class="video-clip clip-3">AÇÃO</div></div><div class="text-track"><span class="track-label">T</span><div class="text-clip">LEGENDAS + ANIMAÇÃO TIPOGRÁFICA</div></div><div class="audio-track"><span class="track-label">A1</span><div class="waveform"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="timeline-playhead" id="timelinePlayhead"></div></div>
       </div>
     </div>
   </section>
@@ -381,5 +350,5 @@
 </footer>
 <a class="floating" href="https://wa.me/5595991476397?text=Ol%C3%A1%2C%20quero%20falar%20sobre%20um%20projeto%20CASTLE" target="_blank" rel="noopener" aria-label="Conversar no WhatsApp">↗</a>
 <script src="assets/app.js" defer></script><script src="assets/lead-form.js?v=20261121-2" defer></script>
-</body>
+<script src="assets/interactive-v5.js?v=5-20261121" defer></script><script type="module" src="assets/phone3d.js?v=5-20261121"></script></body>
 </html>
