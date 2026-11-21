@@ -77,15 +77,35 @@
     }),{rootMargin:'0px 0px -7% 0px',threshold:.08});
     headings.forEach(h=>{if(h.getBoundingClientRect().top<window.innerHeight*.85)h.classList.add('text-unmasked');else io.observe(h)});
   }
-  // Gallery arrows and native mobile swipe, never custom scroll-jacking.
+  // Gallery arrows and native mobile swipe, with deterministic card targeting.
   const rail=document.getElementById('chapterRail');
   const buttons=[...document.querySelectorAll('[data-slide]')];
-  buttons.forEach(b=>b.addEventListener('click',()=>{
-    if(!rail)return;
-    const card=rail.querySelector('.chapter-card');
-    const width=(card?.getBoundingClientRect().width||window.innerWidth*.8)+22;
-    rail.scrollBy({left:(b.dataset.slide==='prev'?-1:1)*width,behavior:reduce.matches?'auto':'smooth'});
+  const galleryCards=rail?[...rail.querySelectorAll('.chapter-card')]:[];
+  const current=document.getElementById('chapterCurrent');
+  const galleryIndex=()=>{
+    if(!rail||!galleryCards.length)return 0;
+    const center=rail.scrollLeft+rail.clientWidth/2;
+    let closest=0,dist=Number.POSITIVE_INFINITY;
+    galleryCards.forEach((card,index)=>{
+      const cardCenter=card.offsetLeft-rail.offsetLeft+card.offsetWidth/2;
+      const delta=Math.abs(center-cardCenter);
+      if(delta<dist){closest=index;dist=delta;}
+    });
+    return closest;
+  };
+  const indicateGallery=()=>{if(current)current.textContent=`0${galleryIndex()+1} / 0${galleryCards.length}`;};
+  buttons.forEach(button=>button.addEventListener('click',()=>{
+    if(!rail||!galleryCards.length)return;
+    const idx=galleryIndex();
+    const next=clamp(idx+(button.dataset.slide==='prev'?-1:1),0,galleryCards.length-1);
+    const card=galleryCards[next];
+    const target=card.offsetLeft-rail.offsetLeft-(rail.clientWidth-card.offsetWidth)/2;
+    rail.scrollTo({left:Math.max(0,target),behavior:reduce.matches?'auto':'smooth'});
+    if(current)current.textContent=`0${next+1} / 0${galleryCards.length}`;
   }));
+  let scrollerRaf=0;
+  rail?.addEventListener('scroll',()=>{if(!scrollerRaf)scrollerRaf=requestAnimationFrame(()=>{scrollerRaf=0;indicateGallery();});},{passive:true});
+  indicateGallery();
   // Accessible component: one format shown at a time, left/right arrows navigate the tablist.
   const tabs=[...document.querySelectorAll('.format-tab[role="tab"]')];
   const panels=[...document.querySelectorAll('.format-panel[role="tabpanel"]')];
