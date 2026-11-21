@@ -171,3 +171,5 @@ html.castle-direction .text-unmasked .word-mask .word-piece{transform:translate3
  .chapter-card img,.format-panel,.format-visuals *{transition:none!important}.director-manifesto{height:auto}.director-pin{position:relative;height:auto;min-height:70vh}
  .sub-cinema-image{transform:none!important}
 }
+
+.chapters-controls .chapter-current{display:inline-block;margin-left:20px;color:#a25c45;letter-spacing:.06em;font-variant-numeric:tabular-nums}
